@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+ <properties iosDevice="0" html5_pack="0" app_icon="" mainluaOnly="0" fps="60" encryptCode="0" autorotation="0" osx_org="GiderosMobile" retinaDisplay="0" osx_signingId="" html5_symbols="0" logicalWidth="720" winrt_org="GiderosMobile" version="1.0" build_number="1" osx_domain="giderosmobile.com" winrt_package="com.yourdomain.yourapp" mouseToTouch="1" tv_icon="" touchToMouse="1" html5_wasm="0" splash_v_image="" win_org="GiderosMobile" vsync="1" html5_fbload="100" html5_mem="256" version_code="1" atv_bundle="com.yourdomain.yourapp-atv" html5_fbinstant="0" mouseTouchOrder="0" osx_installerId="" osx_category="5" osx_bundle="com.yourdomain." splashScaleMode="0" windowHeight="0" app_name="gdoc_00_scenemanager" macos_category="5" exportMode="0" backgroundColor="#ffffff" scaleMode="0" logicalHeight="1280" orientation="1" html5_host="" splash_h_image="" architecture="0" win_domain="giderosmobile.com" macos_bundle="com.yourdomain.yourapp-macos" windowWidth="0" disableSplash="0" encryptAssets="0" html5_crash="" ios_bundle="com.yourdomain.">
+  <imageScales/>
+  <plugins>
+   <plugin enabled="1" name="Easing"/>
+   <plugin enabled="1" name="Ogg"/>
+   <plugin enabled="1" name="SceneManager"/>
+  </plugins>
+  <exports/>
+ </properties>
+ <folder name="audio">
+  <file name="assets/audio/DM-CGS-16.ogg"/>
+ </folder>
+ <folder name="classes">
+  <file name="assets/classes/button_full.lua"/>
+ </folder>
+ <folder name="fonts">
+  <file name="assets/fonts/Cabin-Regular-TTF.ttf"/>
+ </folder>
+ <folder name="gfx">
+  <folder name="menu">
+   <file name="assets/gfx/menu/bg.png"/>
+  </folder>
+ </folder>
+ <folder name="scenes">
+  <file name="assets/scenes/game.lua"/>
+  <file name="assets/scenes/gameover.lua"/>
+  <file name="assets/scenes/menu.lua"/>
+ </folder>
+ <file name="assets/init.lua"/>
+ <file name="assets/main.lua"/>
+</project>
