@@ -1,17 +1,34 @@
+-- plugins
 require "scenemanager"
 require "easing"
 
+-- optimisation
+collectgarbage("setstepmul",1000)
+
+-- global functions
+--...
+
+-- global variables, tables, ...
+-- screen size
+myappleft, myapptop, myappright, myappbot = application:getLogicalBounds()
+myappwidth, myappheight = myappright - myappleft, myappbot - myapptop
+-- fonts (see also composite font)
+font00 = TTFont.new("fonts/Cabin-Regular-TTF.ttf", (12*11.5)//1)
+font01 = TTFont.new("fonts/Cabin-Regular-TTF.ttf", (12*5.2)//1)
+font10 = TTFont.new("fonts/Cabin-Regular-TTF.ttf", (12*3)//1)
+
+-- scenemanager
 scenemanager = SceneManager.new(
 	{
 		["menu"] = Menu,
 		["game"] = Game,
 		["gameover"] = GameOver,
+--		["yourname"] = YourClass,
 	}
 )
-scenemanager:changeScene("menu")
 stage:addChild(scenemanager)
-
--- transitions
+scenemanager:changeScene("menu") --> app/game entry point
+-- scenemanager transitions table
 transitions = {
 	SceneManager.moveFromRight, -- 1
 	SceneManager.moveFromLeft, -- 2
@@ -35,8 +52,7 @@ transitions = {
 	SceneManager.flipWithFade, -- 20
 	SceneManager.flipWithShade, -- 21
 }
-
--- easings
+-- scenemanager (and/or other plugins) easings table
 easings = {
 	easing.inBack, -- 1
 	easing.outBack, -- 2
