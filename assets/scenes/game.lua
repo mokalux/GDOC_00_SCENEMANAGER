@@ -1,20 +1,20 @@
-Game = Core.class(Sprite)
+LevelX = Core.class(Sprite)
 
-function Game:init()
+function LevelX:init()
 	-- bg
 	application:setBackgroundColor(0x5737F9)
 	-- ui
 	self.selector = 1
 	local pixelcolor = 0xFFD42D -- shared amongst ui buttons
 	local textcolor = 0x0 -- shared amongst ui buttons
-	local mybtn = ButtonTP9UDDT.new({
+	local mybtn = ButtonMonster.new({
 		pixelcolorup=pixelcolor,
 		text="MENU", ttf=font01, textcolorup=textcolor, textcolordown=0xffffff,
 	}, 1)
-	local mybtn02 = ButtonTP9UDDT.new({
-		pixelcolorup=pixelcolor, pixelalphaup=0.5,
+	local mybtn02 = ButtonMonster.new({
+		imgup="gfx/ui/Cross grey.png",
 		text="TEST", ttf=font01, textcolorup=textcolor, textcolordown=0xffffff,
-		hovered=0,
+		hover=0,
 	}, 2)
 	-- ui positions
 	mybtn:setPosition(myappwidth/2, 4*myappheight/10)
@@ -38,17 +38,17 @@ function Game:init()
 end
 
 -- GAME LOOP
-function Game:onEnterFrame(e)
+function LevelX:onEnterFrame(e)
 end
 
 -- EVENT LISTENERS
-function Game:onTransitionInBegin() self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self) end
-function Game:onTransitionInEnd() self:myKeysPressed() end
-function Game:onTransitionOutBegin() self:removeEventListener(Event.ENTER_FRAME, self.onEnterFrame, self) end
-function Game:onTransitionOutEnd() end
+function LevelX:onTransitionInBegin() self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self) end
+function LevelX:onTransitionInEnd() self:myKeysPressed() end
+function LevelX:onTransitionOutBegin() self:removeEventListener(Event.ENTER_FRAME, self.onEnterFrame, self) end
+function LevelX:onTransitionOutEnd() end
 
 -- KEYS HANDLER
-function Game:myKeysPressed()
+function LevelX:myKeysPressed()
 	self:addEventListener(Event.KEY_DOWN, function(e)
 		-- for mobiles and desktops
 		if e.keyCode == KeyCode.BACK or e.keyCode == KeyCode.ESC then self:goto() end
@@ -56,7 +56,7 @@ function Game:myKeysPressed()
 end
 
 -- change scene
-function Game:goto()
+function LevelX:goto()
 	if self.selector == 1 then scenemanager:changeScene("menu", 1, transitions[2], easings[2])
 	elseif self.selector == 2 then print(self.selector)
 	end
